@@ -44,7 +44,9 @@ void liset(struct brodoui abdo[], int nmb){
     scanf("%d",&M);
     if(M==1){
         rocherch(abdo , nmb);
-    }
+    }else if ( M==2){
+        oredre(abdo , nmb );
+        }
 
 }
 void rocherch(struct brodoui abdo[] , int nmp ){
@@ -61,12 +63,32 @@ void rocherch(struct brodoui abdo[] , int nmp ){
         }
     }
 }
+int oredre(struct brodoui abdo[100] , int nmp ){
+    int P = 0 ;
+   for (int i = 0; i < nmp; i++)
+   { for (int P = 0; P < nmp; P++)
+   {
+    int A = abdo[P].w;
+    int B = abdo[P+1].w ;
+    int chz , chw ;
+    char chx[100] , chy[100];
+    if ( A < B )
+    {
+        //tabedile semiya 
+        chx[100] = abdo[P].x ;
+       abdo[P].x == abdo[P+1].x ;
+       abdo[P+1].x == chx ; 
+       //neha hebaseeete 
+        
+     } 
+    }
+   }
+}
 
 int main()
 {
     int nmb , q ,riche , N , M ;
     struct brodoui abdo[100];
-
     printf(" if you want one product , press 1 ;\n if want to enter more than one  product , press 2 ;\n what is your choice ? ");
     scanf("%d",&q);
     // determine the method of work 
@@ -87,4 +109,5 @@ int main()
         //if you enter a number ether then 1 and 2;
         printf(" errore ");
     }
+
  }
