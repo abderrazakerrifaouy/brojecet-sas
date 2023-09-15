@@ -78,7 +78,8 @@ int oredre(struct brodoui abdo[100] , int nmp ){
         chx[100] = abdo[P].x ;
        abdo[P].x == abdo[P+1].x ;
        abdo[P+1].x == chx ; 
-       //neha hebaseeete 
+       //neha hebaseeete KEMALE DAKECHILI BEDITEY O5EDAME LE CHALENGE 
+       
         
      } 
     }
