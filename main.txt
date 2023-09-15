@@ -1,0 +1,14 @@
+if(M==1){
+    rocherch(abdo ,nmb);
+    }else if(M==2){
+        printf(" Sort by size ? press 1 ; \n sort by name press 2 \n what is your choice ? ");
+        scanf("%d",&N);
+        if(N==1){
+            printf(" to sort products from cheapest to most expensive; ");
+            riche = 0 ;
+         }
+       }
+
+
+       abdo[1].W 
+       abdo[2].W
