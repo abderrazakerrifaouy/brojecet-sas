@@ -56,8 +56,7 @@ void rocherch(struct brodoui abdo[] , int nmp ){
     printf(" da5elel code ");
     scanf("%s",code);
     for( int i = 0 ; i<nmp ; i++ ){
-        if(strlen(abdo[i].x)==strlen(s)|| strlen(abdo[i].y)==strlen(code)){
-    printf("  \n the nume the brodio %s",abdo[i].x);
+        if(strlen(abdo[i].x)==strlen(s) && strlen(abdo[i].y)==strlen(code)){
     printf(" \n the cntite %s ; %d  \n ",abdo[i].x ,abdo[i].z);
     printf("  \n the prix %s = %d \n",abdo[i].x ,abdo[i].w);
         }
@@ -78,7 +77,7 @@ int oredre(struct brodoui abdo[100] , int nmp ){
         chx[100] = abdo[P].x ;
        abdo[P].x == abdo[P+1].x ;
        abdo[P+1].x == chx ; 
-       //neha hebaseeete KEMALE DAKECHILI BEDITEY O5EDAME LE CHALENGE 
+       //neha hebaseeete KEMALE DAKECHILI LI BEDITEY O5EDAME LE CHALENGE HOMA LEWELINE 
        
         
      } 
