@@ -1,7 +1,6 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-struct brodoui{
+ brodoui{
     char x[100] ;
     char y[100] ;
     int z ;
@@ -37,19 +36,15 @@ void liset(struct brodoui abdo[], int nmb , int Z  ){
     printf(" \n the code the %s %s ; \n",abdo[i].x ,abdo[i].y);
     printf(" the cntite %s %d ; \n ",abdo[i].x ,abdo[i].z);
     printf("  the prix %s = %d ; \n",abdo[i].x ,abdo[i].w);
-    printf("}");
+    printf("}\n");
     }
     printf("\n\n\n************************");
-    if (Z == 0 )
+    if (Z==0)
     {
-         printf(" \n if you want to search for a product , press 1 ; \n if you want sort the products , press 2 ; \n what is your choice ? ");
-    scanf("%d",&M);
-    if(M==1){
-        rocherch(abdo , nmb);
-    }else if (M==2){
-        oredre(abdo , nmb );
-        }
- }
+        oredre(abdo,nmb);
+    }
+    
+     
 }
 void rocherch(struct brodoui abdo[] , int nmp ){
     char s[100] , code[100];
