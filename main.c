@@ -1,114 +1,122 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-struct brodoui{
-    char x[100] ;
-    char y[100] ;
-    int z ;
-    int w ;
-    int number ;
 
-}errifaouy;
+struct product {
+    char x[100];
+    char y[100];
+    int z;
+    int w;
+    int number;
+};
 
-
-void scan(struct brodoui abdo[], int nmb){
-
-      for(int i=0 ; i<nmb ; i++){
+void scan(struct product warehouse[], int nmb) {
+    for (int i = 0; i < nmb; i++) {
         printf("********************\n");
-    abdo[i].number = i ;
-    printf("enter the nume the brodio %d ; ",i+1 );
-    scanf("%s",abdo[i].x);
-    printf(" enter the code the %s ; ",abdo[i].x);
-    scanf("%s",abdo[i].y);
-    printf(" entere the cntite %s ; ",abdo[i].x);
-    scanf("%d",&abdo[i].z);
-    printf(" inter the prix %s ;  ",abdo[i].x);
-    scanf("%d",&abdo[i].w);
-    printf("\n\n\n**************************");
-     }
-
-}
-
-void liset(struct brodoui abdo[], int nmb){
-    int M , N ;
-    for( int i  = 0 ; i < nmb ; i++){
-    printf(" prodio %d {",abdo[i].number + 1 );
-    printf(" \n %d the nume the brodio %s ; ", abdo[i].number +1 ,abdo[i].x);
-    printf(" \n the code the %s %s ; \n",abdo[i].x ,abdo[i].y);
-    printf(" the cntite %s %d ; \n ",abdo[i].x ,abdo[i].z);
-    printf("  the prix %s = %d ; \n",abdo[i].x ,abdo[i].w);
-    printf("}");
+        warehouse[i].number = i;
+        printf("enter the name of brodio %d: ", i + 1);
+        scanf("%s", warehouse[i].x);
+        printf("enter the code for %s: ", warehouse[i].x);
+        scanf("%s", warehouse[i].y);
+        printf("enter the quantity for %s: ", warehouse[i].x);
+        scanf("%d", &warehouse[i].z);
+        printf("enter the price for %s: ", warehouse[i].x);
+        scanf("%d", &warehouse[i].w);
+        printf("\n\n\n**************************\n");
     }
-    printf("\n\n\n************************");
-    printf(" \n if you want to search for a product , press 1 ; \n if you want sort the products , press 2 ; \n what is your choice ? ");
-    scanf("%d",&M);
-    if(M==1){
-        rocherch(abdo , nmb);
-    }else if ( M==2){
-        oredre(abdo , nmb );
-        }
-
 }
-void rocherch(struct brodoui abdo[] , int nmp ){
-    char s[100] , code[100];
-    printf(" da5ele semayiya ; ");
-    scanf("%s",s);
-    printf(" da5elel code ");
-    scanf("%s",code);
-    for( int i = 0 ; i<nmp ; i++ ){
-        if(strlen(abdo[i].x)==strlen(s)|| strlen(abdo[i].y)==strlen(code)){
-    printf("  \n the nume the brodio %s",abdo[i].x);
-    printf(" \n the cntite %s ; %d  \n ",abdo[i].x ,abdo[i].z);
-    printf("  \n the prix %s = %d \n",abdo[i].x ,abdo[i].w);
+
+void liset(struct product warehouse[], int nmb, int Z) {
+    int M, N;
+    for (int i = 0; i < nmb; i++) {
+        printf("product %d {\n", warehouse[i].number + 1);
+        printf("the name of brodio: %s\n", warehouse[i].x);
+        printf("the code: %s %s\n", warehouse[i].x, warehouse[i].y);
+        printf("the quantity %s: %d\n", warehouse[i].x, warehouse[i].z);
+        printf("the price %s = %d\n", warehouse[i].x, warehouse[i].w);
+        printf("}\n");
+    }
+    printf("\n\n\n************************\n");
+    if (Z == 0) {
+        printf("\nIf you want to search for a product, press 1;\nIf you want to sort the products, press 2;\nWhat is your choice? ");
+        scanf("%d", &M);
+        if (M == 1) {
+            rocherch(warehouse, nmb);
+        } else if (M == 2) {
+            oredre(warehouse, nmb);
         }
     }
 }
-int oredre(struct brodoui abdo[100] , int nmp ){
-    int P = 0 ;
-   for (int i = 0; i < nmp; i++)
-   { for (int P = 0; P < nmp; P++)
-   {
-    int A = abdo[P].w;
-    int B = abdo[P+1].w ;
-    int chz , chw ;
-    char chx[100] , chy[100];
-    if ( A < B )
-    {
-        //tabedile semiya 
-        chx[100] = abdo[P].x ;
-       abdo[P].x == abdo[P+1].x ;
-       abdo[P+1].x == chx ; 
-       //neha hebaseeete KEMALE DAKECHILI BEDITEY O5EDAME LE CHALENGE 
-       
-        
-     } 
+
+void rocherch(struct product warehouse[], int nmp) {
+    char s[100], code[100];
+    printf(" ");
+    printf("Enter a name: ");
+    scanf("%s", s);
+    printf("Enter a code: ");
+    scanf("%s", code);
+    for (int i = 0; i < nmp; i++) {
+        if (warehouse[i].x == s || warehouse[i].y == code ) {
+            printf("The quantity for %s: %d\n", warehouse[i].x, warehouse[i].z);
+            printf("The price for %s = %d\n", warehouse[i].x, warehouse[i].w);
+        }
     }
-   }
 }
 
-int main()
-{
-    int nmb , q ,riche , N , M ;
-    struct brodoui abdo[100];
-    printf(" if you want one product , press 1 ;\n if want to enter more than one  product , press 2 ;\n what is your choice ? ");
-    scanf("%d",&q);
-    // determine the method of work 
-    if(q==2){
-    // enter the number of products
-    printf("entere the numeber the brodio ; ");
-    scanf("%d",&nmb);
-    //call the input function 
-    scan(abdo,nmb);
-    // call the print function
-     liset(abdo,nmb);
-    }else if(q==1){
-        //if youwant to enter one prosuct 
-        nmb = 1 ;
-        scan(abdo,nmb);
-        liset(abdo,nmb);
-    }else{
-        //if you enter a number ether then 1 and 2;
-        printf(" errore ");
+void oredre(struct product warehouse[], int nmp) {
+    struct product xenge[100];
+    int x ;
+    printf("Sorting alphabetically press 1 ; \n Sorting by price 2;  ");
+    scanf("%d",&x);
+    if(x==1){
+    for (int i = 0; i < nmp; i++) {
+        for (int z = 0; z < nmp - 1; z++) {
+            if (warehouse[z].w > warehouse[z + 1].w) {
+                xenge[z] = warehouse[z];
+                warehouse[z] = warehouse[z + 1];
+                warehouse[z + 1] = xenge[z];
+            }
+        }
     }
 
- }
+    int z = 1;
+    liset(warehouse, nmp, z);
+    }
+    if(x==2){
+        for (int i = 0; i < nmp; i++) {
+        for (int z = 0; z < nmp - 1; z++) {
+            if (strcmp(warehouse[z].x,warehouse[z+1].x)>1) {
+                xenge[z] = warehouse[z];
+                warehouse[z] = warehouse[z + 1];
+                warehouse[z + 1] = xenge[z];
+
+        }
+    }
+
+
+    }
+     int z = 1;
+    liset(warehouse, nmp, z);
+}
+}
+
+int main() {
+    int nmb, q, riche, N, M, z = 0;
+    struct product warehouse[100];
+    printf("If you want to enter one product, press 1;\nIf you want to enter more than one product, press 2;\nWhat is your choice? ");
+    scanf("%d", &q);
+
+    if (q == 2) {
+        printf("Enter the number of products: ");
+        scanf("%d", &nmb);
+        scan(warehouse, nmb);
+        liset(warehouse, nmb, z);
+    } else if (q == 1) {
+        nmb = 1;
+        scan(warehouse, nmb);
+        liset(warehouse, nmb, z);
+    } else {
+        printf("Error\n");
+    }
+    return 0;
+}
