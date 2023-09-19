@@ -79,7 +79,7 @@ void oredre(struct product warehouse[], int nmp) {
     if(x==2){
         for (int i = 0; i < nmp; i++) {
         for (int z = 0; z < nmp - 1; z++) {
-            if (strcmp(warehouse[z].x,warehouse[z+1].x)>1) {
+            if (strcmp(warehouse[z].x,warehouse[z+1].x)>0) {
                 xenge[z] = warehouse[z];
                 warehouse[z] = warehouse[z + 1];
                 warehouse[z + 1] = xenge[z];
